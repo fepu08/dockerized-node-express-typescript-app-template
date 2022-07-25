@@ -21,3 +21,4 @@ A dockerized node app using express and typescript
 - Bind-mount package.json. This allows adding packages in realtime without rebuilding images. e.g.
   - `docker-compose exec backend npm install --save <package name>` (doesn't work on all systems)
   - `docker-compose exec backend bash` & `npm install --save <package name>`
+After installing the package, you may change some files to invoke a nodemon restart

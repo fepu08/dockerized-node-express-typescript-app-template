@@ -1,7 +1,7 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
 
 const app: Application = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use('/', (req: Request, res: Response, next: NextFunction) => {
