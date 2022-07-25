@@ -1,0 +1,51 @@
+{
+  "name": "dockerized-node-express-typescript-app-template",
+  "version": "1.0.0",
+  "description": "A dockerized node app using express and typescript",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "start:dev": "nodemon",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "style": "eslint src/*",
+    "style:ts": "eslint . --ext .ts",
+    "style:fix": "npm run style --fix",
+    "lint": "eslint ./src/**/*.ts",
+    "format": "eslint ./src/**/*.ts --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fepu08/dockerized-node-express-typescript-app-template.git"
+  },
+  "keywords": [
+    "node",
+    "docker",
+    "typescript",
+    "javascript",
+    "express"
+  ],
+  "author": "fepu08",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fepu08/dockerized-node-express-typescript-app-template/issues"
+  },
+  "homepage": "https://github.com/fepu08/dockerized-node-express-typescript-app-template#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1",
+    "prettier-eslint": "^15.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

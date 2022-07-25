@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend/
+      target: dev
+    command: nodemon --exec ../node_modules/.bin/ts-node ./src/index.ts
+    ports:
+      - '80:3000'
+    user: node
+    volumes:
+      - ./:/opt/node_app/app
+      # bind-mounting these two files in will let you add packages during development without rebuilding
+      # and then nodemon will restart. Your changes will last until you "docker-compose down" and will
+      # be saved on host for next build
+      # NOTE: this won't work on Docker Toolbox (virtualbox) which doesn't bind-mount single files
+      - ./package.json:/opt/node_app/package.json
+      - ./package-lock.json:/opt/node_app/package-lock.json
+      # this is a workaround to prevent host node_modules from accidently getting mounted in container
+      # in case you want to use node/npm both outside container for test/lint etc. and also inside container
+      # this will overwrite the default node_modules dir in container so it won't conflict with our
+      # /opt/node_app/node_modules location.
+      - notused:/opt/node_app/app/node_modules
+    environment:
+      NODE_ENV: development
+    healthcheck:
+      test: curl -f http://127.0.0.1:3000
+    networks:
+      - application_network
+
+networks:
+  application_network:
+    driver: bridge
+
+volumes:
+  notused:
