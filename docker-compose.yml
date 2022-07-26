@@ -11,7 +11,7 @@ services:
     user: node
     volumes:
       - ./backend/:/opt/node_app/app
-      - notused:/opt/node_app/app/node_modules
+      - /opt/node_app/app/node_modules
     environment:
       NODE_ENV: development
       PORT: 3000
@@ -23,6 +23,3 @@ services:
 networks:
   application_network:
     driver: bridge
-
-volumes:
-  notused:

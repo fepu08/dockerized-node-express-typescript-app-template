@@ -1,4 +1,3 @@
-
 FROM node:18 as base
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
@@ -19,7 +18,6 @@ ENV PATH=/opt/node_app/node_modules/.bin:$PATH
 # via docker exec by leaving a user owned, empty node_modules
 RUN npm install --ignore-scipts && mv node_modules ../ && mkdir node_modules
 COPY --chown=node:node . .
-
 CMD ["nodemon", "--exec", "../node_modules/.bin/ts-node", "./src/index.ts"]
 
 FROM base as source
@@ -39,7 +37,6 @@ RUN eslint .
 RUN npm test
 # run integration testing with docker-compose later
 CMD ["npm", "run", "test"] 
-
 
 ## Stage 5 (default, production)
 # this will run by default if you don't include a target
