@@ -1,0 +1,6 @@
+dist
+node_modules
+docs
+data
+test-reports
+Dockerfile

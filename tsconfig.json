@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "strict": true,
+    "allowJs": false,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "declaration": true,
+    "sourceMap": true,
+    "experimentalDecorators": true
+  },
+  "include": ["src/**/*.ts"]
+}

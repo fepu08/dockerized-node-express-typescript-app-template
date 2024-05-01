@@ -1,0 +1,7 @@
+{
+  "watch": ["src"],
+  "ignore": ["**/?(*.)+(spec|test).ts?(x)", "node_modules"],
+  "ext": "ts,mjs,js,json,graphql",
+  "legacyWatch": true,
+  "exec": "etsc && node ./dist/index.js"
+}

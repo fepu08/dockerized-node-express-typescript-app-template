@@ -1,0 +1,25 @@
+{
+  "useTabs": false,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "semi": true,
+  "trailingComma": "all",
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 70,
+        "useTabs": false,
+        "trailingComma": "none",
+        "arrowParens": "avoid",
+        "proseWrap": "never"
+      }
+    },
+    {
+      "files": "*.{json,eslintrc,prettierrc}",
+      "options": { "useTabs": false }
+    }
+  ]
+}
